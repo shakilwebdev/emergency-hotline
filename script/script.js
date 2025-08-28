@@ -2,7 +2,6 @@
 let heartIcon = document.querySelectorAll(
   ".emergency-services-section .fa-heart"
 );
-
 for (const icon of heartIcon) {
   icon.addEventListener("click", function () {
     console.log("jakala");
@@ -14,24 +13,28 @@ for (const icon of heartIcon) {
 // copy icon
 let copyCount = document.getElementById("copy-count");
 let copyIcon = document.querySelectorAll(".emergency-services-section .copy");
-
 for (const icon of copyIcon) {
   icon.addEventListener("click", function () {
-    console.log("copy");
+    const card = this.closest(".emergency-services-section .card");
+    const cardNumber = card.querySelector(".number").innerText;
+    // copy to clipboard
+    navigator.clipboard.writeText(cardNumber).then(() => {
+      alert(`নম্বর কপি হয়েছে: ${cardNumber}`);
+    });
     copyCount.innerText = parseInt(copyCount.innerText) + 1;
   });
 }
 
+// calls work
 let calls = document.querySelectorAll(".emergency-services-section .call");
 const callListContainer = document.getElementById("call-list-container");
-
 for (const call of calls) {
   call.addEventListener("click", function () {
     const card = this.closest(".emergency-services-section .card");
     const cardTitle = card.querySelector(".card-title").innerText;
     const cardNumber = card.querySelector(".number").innerText;
     // alert
-    alert(`You are calling to ${cardTitle}, Number: ${cardNumber}`);
+    alert(`calling ${cardTitle} ${cardNumber}`);
     // star deduct
     let star = document.getElementById("star");
     let currentStar = parseInt(star.innerText);
@@ -53,6 +56,7 @@ for (const call of calls) {
       "bg-gray-50",
       "rounded"
     );
+
     // Get current time
     const now = new Date();
     const timeString = now.toLocaleTimeString();
@@ -67,6 +71,7 @@ for (const call of calls) {
         </div>
       </div>
     `;
+
     // clear button event
     const clearBtn = document.getElementById("clear-btn");
     clearBtn.addEventListener("click", function () {
@@ -74,6 +79,7 @@ for (const call of calls) {
       star.innerText = 100;
     });
 
+    // callListContainer append list item
     callListContainer.appendChild(listItem);
   });
 }
