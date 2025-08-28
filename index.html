@@ -12,12 +12,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <!-- daisyui and tailwindcss -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/daisyui@5"
-      rel="stylesheet"
-      type="text/css"
-    />
+    <!-- tailwindcss -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="tailwind.init.css" />
   </head>
@@ -49,7 +44,7 @@
           <button
             class="bg-[#00A63E] py-3.5 px-9 flex items-center gap-2 rounded-full text-white font-bold"
           >
-            <span>2</span>copy
+            <span id="copy-count">0</span>copy
           </button>
         </div>
       </div>
@@ -74,7 +69,7 @@
           <div
             class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 my-10"
           >
-            <div class="shadow p-8 rounded bg-white">
+            <div class="card shadow p-8 rounded bg-white">
               <div class="flex justify-between items-center">
                 <span class="p-3.5 bg-[#FFE3E2] rounded-full">
                   <img class="w-8" src="assets/emergency.png" alt="emergency"
@@ -95,7 +90,7 @@
               </button>
               <div>
                 <button
-                  class="border border-[#D4D6D5] rounded text-[#5C5C5C] py-2 px-7 mr-1.5"
+                  class="copy border border-[#D4D6D5] rounded text-[#5C5C5C] py-2 px-7 mr-1.5"
                 >
                   <i class="fa-solid fa-copy mr-0.5"></i>
                   Copy
@@ -106,7 +101,7 @@
                 </button>
               </div>
             </div>
-            <div class="shadow p-8 rounded bg-white">
+            <div class="card shadow p-8 rounded bg-white">
               <div class="flex justify-between items-center">
                 <span class="p-3.5 bg-[#FFE3E2] rounded-full">
                   <img class="w-8" src="assets/police.png" alt="police"
@@ -125,7 +120,7 @@
               </button>
               <div>
                 <button
-                  class="border border-[#D4D6D5] rounded text-[#5C5C5C] py-2 px-7 mr-1.5"
+                  class="copy border border-[#D4D6D5] rounded text-[#5C5C5C] py-2 px-7 mr-1.5"
                 >
                   <i class="fa-solid fa-copy mr-0.5"></i>
                   Copy
@@ -136,7 +131,7 @@
                 </button>
               </div>
             </div>
-            <div class="shadow p-8 rounded bg-white">
+            <div class="card shadow p-8 rounded bg-white">
               <div class="flex justify-between items-center">
                 <span class="p-3.5 bg-[#FFE3E2] rounded-full">
                   <img
@@ -158,7 +153,7 @@
               </button>
               <div>
                 <button
-                  class="border border-[#D4D6D5] rounded text-[#5C5C5C] py-2 px-7 mr-1.5"
+                  class="copy border border-[#D4D6D5] rounded text-[#5C5C5C] py-2 px-7 mr-1.5"
                 >
                   <i class="fa-solid fa-copy mr-0.5"></i>
                   Copy
@@ -169,7 +164,7 @@
                 </button>
               </div>
             </div>
-            <div class="shadow p-8 rounded bg-white">
+            <div class="card shadow p-8 rounded bg-white">
               <div class="flex justify-between items-center">
                 <span class="p-3.5 bg-[#FFE3E2] rounded-full">
                   <img class="w-8" src="assets/ambulance.png" alt="ambulance"
@@ -188,7 +183,7 @@
               </button>
               <div>
                 <button
-                  class="border border-[#D4D6D5] rounded text-[#5C5C5C] py-2 px-7 mr-1.5"
+                  class="copy border border-[#D4D6D5] rounded text-[#5C5C5C] py-2 px-7 mr-1.5"
                 >
                   <i class="fa-solid fa-copy mr-0.5"></i>
                   Copy
@@ -199,7 +194,7 @@
                 </button>
               </div>
             </div>
-            <div class="shadow p-8 rounded bg-white">
+            <div class="card shadow p-8 rounded bg-white">
               <div class="flex justify-between items-center">
                 <span class="p-3.5 bg-[#FFE3E2] rounded-full">
                   <img class="w-8" src="assets/emergency.png" alt="emergency"
@@ -220,7 +215,7 @@
               </button>
               <div>
                 <button
-                  class="border border-[#D4D6D5] rounded text-[#5C5C5C] py-2 px-7 mr-1.5"
+                  class="copy border border-[#D4D6D5] rounded text-[#5C5C5C] py-2 px-7 mr-1.5"
                 >
                   <i class="fa-solid fa-copy mr-0.5"></i>
                   Copy
@@ -231,7 +226,7 @@
                 </button>
               </div>
             </div>
-            <div class="shadow p-8 rounded bg-white">
+            <div class="card shadow p-8 rounded bg-white">
               <div class="flex justify-between items-center">
                 <span class="p-3.5 bg-[#FFE3E2] rounded-full">
                   <img class="w-8" src="assets/emergency.png" alt="emergency"
@@ -250,7 +245,7 @@
               </button>
               <div>
                 <button
-                  class="border border-[#D4D6D5] rounded text-[#5C5C5C] py-2 px-7 mr-1.5"
+                  class="copy border border-[#D4D6D5] rounded text-[#5C5C5C] py-2 px-7 mr-1.5"
                 >
                   <i class="fa-solid fa-copy mr-0.5"></i>
                   Copy
@@ -261,7 +256,7 @@
                 </button>
               </div>
             </div>
-            <div class="shadow p-8 rounded bg-white">
+            <div class="card shadow p-8 rounded bg-white">
               <div class="flex justify-between items-center">
                 <span class="p-3.5 bg-[#FFE3E2] rounded-full">
                   <img class="w-8" src="assets/emergency.png" alt="emergency"
@@ -282,7 +277,7 @@
               </button>
               <div>
                 <button
-                  class="border border-[#D4D6D5] rounded text-[#5C5C5C] py-2 px-7 mr-1.5"
+                  class="copy border border-[#D4D6D5] rounded text-[#5C5C5C] py-2 px-7 mr-1.5"
                 >
                   <i class="fa-solid fa-copy mr-0.5"></i>
                   Copy
@@ -293,7 +288,7 @@
                 </button>
               </div>
             </div>
-            <div class="shadow p-8 rounded bg-white">
+            <div class="card shadow p-8 rounded bg-white">
               <div class="flex justify-between items-center">
                 <span class="p-3.5 bg-[#FFE3E2] rounded-full">
                   <img class="w-8" src="assets/emergency.png" alt="emergency"
@@ -312,7 +307,7 @@
               </button>
               <div>
                 <button
-                  class="border border-[#D4D6D5] rounded text-[#5C5C5C] py-2 px-7 mr-1.5"
+                  class="copy border border-[#D4D6D5] rounded text-[#5C5C5C] py-2 px-7 mr-1.5"
                 >
                   <i class="fa-solid fa-copy mr-0.5"></i>
                   Copy
@@ -323,7 +318,7 @@
                 </button>
               </div>
             </div>
-            <div class="shadow p-8 rounded bg-white">
+            <div class="card shadow p-8 rounded bg-white">
               <div class="flex justify-between items-center">
                 <span class="p-3.5 bg-[#FFE3E2] rounded-full">
                   <img class="w-8" src="assets/emergency.png" alt="emergency"
@@ -344,7 +339,7 @@
               </button>
               <div>
                 <button
-                  class="border border-[#D4D6D5] rounded text-[#5C5C5C] py-2 px-7 mr-1.5"
+                  class="copy border border-[#D4D6D5] rounded text-[#5C5C5C] py-2 px-7 mr-1.5"
                 >
                   <i class="fa-solid fa-copy mr-0.5"></i>
                   Copy

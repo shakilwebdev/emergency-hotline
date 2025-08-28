@@ -1,3 +1,4 @@
+// heart icon
 let heartIcon = document.querySelectorAll(
   ".emergency-services-section .fa-heart"
 );
@@ -9,21 +10,28 @@ for (const icon of heartIcon) {
     heartCount.innerText = parseInt(heartCount.innerText) + 1;
   });
 }
-/* 
-let calls = document.querySelectorAll(".emergency-services-section .call");
-for (const call of calls) {
-  call.addEventListener("click", function () {
-    console.log("hello");
+
+// copy icon
+let copyCount = document.getElementById("copy-count");
+let copyIcon = document.querySelectorAll(".emergency-services-section .copy");
+
+for (const icon of copyIcon) {
+  icon.addEventListener("click", function () {
+    console.log("copy");
+    copyCount.innerText = parseInt(copyCount.innerText) + 1;
   });
 }
- */
 
 let calls = document.querySelectorAll(".emergency-services-section .call");
-
 const callListContainer = document.getElementById("call-list-container");
 
 for (const call of calls) {
   call.addEventListener("click", function () {
+    const card = this.closest(".emergency-services-section .card");
+    const cardTitle = card.querySelector(".card-title").innerText;
+    const cardNumber = card.querySelector(".number").innerText;
+    // alert
+    alert(`You are calling to ${cardTitle}, Number: ${cardNumber}`);
     // star deduct
     let star = document.getElementById("star");
     let currentStar = parseInt(star.innerText);
@@ -45,9 +53,19 @@ for (const call of calls) {
       "bg-gray-50",
       "rounded"
     );
+    // Get current time
+    const now = new Date();
+    const timeString = now.toLocaleTimeString();
     listItem.innerHTML = `
-      <h3 class="font-bold text-xl mb-2">title</h3>
-      <p class="text-lg text-gray-700">Number</p>
+      <div class="flex justify-between items-center">
+        <div>
+          <h3 class="font-bold text-xl mb-2">${cardTitle}</h3>
+          <p class="text-lg text-gray-700">${cardNumber}</p>
+        </div>
+        <div>
+          <p class="text-sm text-gray-500 mt-1">${timeString}</p>
+        </div>
+      </div>
     `;
     // clear button event
     const clearBtn = document.getElementById("clear-btn");
