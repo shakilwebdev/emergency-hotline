@@ -4,19 +4,18 @@ let heartIcon = document.querySelectorAll(
 );
 for (const icon of heartIcon) {
   icon.addEventListener("click", function () {
-    console.log("jakala");
     let heartCount = document.getElementById("heart-count");
     heartCount.innerText = parseInt(heartCount.innerText) + 1;
   });
 }
 
-// copy icon
+// copy work
 let copyCount = document.getElementById("copy-count");
 let copyIcon = document.querySelectorAll(".emergency-services-section .copy");
 for (const icon of copyIcon) {
   icon.addEventListener("click", function () {
-    const card = this.closest(".emergency-services-section .card");
-    const cardNumber = card.querySelector(".number").innerText;
+    const cardNumber =
+      icon.parentNode.parentNode.querySelector(".number").innerText;
     // copy to clipboard
     navigator.clipboard.writeText(cardNumber).then(() => {
       alert(`নম্বর কপি হয়েছে: ${cardNumber}`);
@@ -30,9 +29,10 @@ let calls = document.querySelectorAll(".emergency-services-section .call");
 const callListContainer = document.getElementById("call-list-container");
 for (const call of calls) {
   call.addEventListener("click", function () {
-    const card = this.closest(".emergency-services-section .card");
-    const cardTitle = card.querySelector(".card-title").innerText;
-    const cardNumber = card.querySelector(".number").innerText;
+    const cardTitle =
+      call.parentNode.parentNode.querySelector(".card-title").innerText;
+    const cardNumber =
+      call.parentNode.parentNode.querySelector(".number").innerText;
     // alert
     alert(`calling ${cardTitle} ${cardNumber}`);
     // star deduct
