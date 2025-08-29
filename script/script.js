@@ -33,15 +33,15 @@ for (const call of calls) {
       call.parentNode.parentNode.querySelector(".card-title").innerText;
     const cardNumber =
       call.parentNode.parentNode.querySelector(".number").innerText;
-    // alert
-    alert(`calling ${cardTitle} ${cardNumber}`);
-    // star deduct
+    // star detect
     let star = document.getElementById("star");
     let currentStar = parseInt(star.innerText);
     if (currentStar <= 0) {
+      alert("আপনার পর্যাপ্ত কয়েন নেই! কল করতে কমপক্ষে ২০ কয়েন লাগবে।");
       star.innerText = "0";
       return;
     }
+    alert(`calling ${cardTitle} ${cardNumber}`);
     let newStar = currentStar - 20;
     if (newStar < 0) {
       newStar = 0;
